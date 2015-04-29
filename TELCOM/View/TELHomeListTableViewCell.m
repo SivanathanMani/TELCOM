@@ -26,6 +26,7 @@
         labelTitle.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
         labelTitle.textAlignment = NSTextAlignmentLeft;
         labelTitle.numberOfLines = 1;
+        labelTitle.lineBreakMode = NSLineBreakByWordWrapping;
         [labelTitle setFont:[UIFont boldSystemFontOfSize:17.0f]];
         [self.contentView addSubview:labelTitle];
         
@@ -34,8 +35,8 @@
         labelDesc.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         labelDesc.textAlignment = NSTextAlignmentLeft;
         labelDesc.numberOfLines = 4;
-        labelTitle.font = [UIFont systemFontOfSize:17.0f];
-        labelDesc.lineBreakMode = NSLineBreakByWordWrapping;
+        labelDesc.font = [UIFont systemFontOfSize:17.0f];
+        labelDesc.lineBreakMode = NSLineBreakByTruncatingTail;
         labelDesc.textColor = [UIColor blackColor];
         [self.contentView addSubview:labelDesc];
         

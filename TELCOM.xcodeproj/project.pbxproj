@@ -23,6 +23,7 @@
 		84BA00261AEF6FED0091C7A0 /* TELHomeListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA00211AEF6FED0091C7A0 /* TELHomeListTableViewCell.m */; };
 		84BA00291AEF72AC0091C7A0 /* TELHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA00281AEF72AC0091C7A0 /* TELHomeManager.m */; };
 		84BA002C1AEF72D20091C7A0 /* TELHomeOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA002B1AEF72D20091C7A0 /* TELHomeOperation.m */; };
+		84C55B921AF11D25003425AD /* Failed.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C55B911AF11D25003425AD /* Failed.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		84BA00281AEF72AC0091C7A0 /* TELHomeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TELHomeManager.m; sourceTree = "<group>"; };
 		84BA002A1AEF72D20091C7A0 /* TELHomeOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TELHomeOperation.h; sourceTree = "<group>"; };
 		84BA002B1AEF72D20091C7A0 /* TELHomeOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TELHomeOperation.m; sourceTree = "<group>"; };
+		84C55B911AF11D25003425AD /* Failed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Failed.png; path = TELCOM/Images.xcassets/Failed.imageset/Failed.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		846A01DC1AEF452200172FA1 = {
 			isa = PBXGroup;
 			children = (
+				84C55B911AF11D25003425AD /* Failed.png */,
 				847693131AEFCF1100313FF0 /* Placeholder.png */,
 				846AF7231AEF8F640041109B /* SystemConfiguration.framework */,
 				846A01E61AEF452200172FA1 /* Products */,
@@ -299,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C55B921AF11D25003425AD /* Failed.png in Resources */,
 				847693141AEFCF1100313FF0 /* Placeholder.png in Resources */,
 				846A01F41AEF452300172FA1 /* Main.storyboard in Resources */,
 				846A01F91AEF452300172FA1 /* LaunchScreen.xib in Resources */,

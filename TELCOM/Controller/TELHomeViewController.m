@@ -92,6 +92,11 @@
     }
     
     cell.labelTitle.text = [TELHelper checkValidString:[[mArrayItemList objectAtIndex:indexPath.row] objectForKey:kResponseTitleKey]];
+    UIFont * boldFont = [UIFont boldSystemFontOfSize:17.0f];
+    UIColor * foregroundColor = [UIColor blackColor];
+    NSDictionary * attrs = [NSDictionary dictionaryWithObjectsAndKeys:boldFont, NSFontAttributeName, foregroundColor, NSForegroundColorAttributeName, nil];
+    NSMutableAttributedString * attributedText = [[NSMutableAttributedString alloc] initWithString:cell.labelTitle.text attributes:attrs];
+    [cell.labelTitle setAttributedText:attributedText];
     cell.labelDesc.text = [TELHelper checkValidString:[[mArrayItemList objectAtIndex:indexPath.row] objectForKey:kResponseDescKey]];
     
     //For dynamic height
@@ -180,11 +185,13 @@
  */
 -(void) showHomeCustomUI
 {
+    [self hideActivityIndicator];
     isTableLoaded = YES;
     if([mArrayItemList count] != 0)
     {
         if(tableViewHome != nil)
         {
+            [tableViewHome removeFromSuperview];
             tableViewHome = nil;
         }
         self.tableViewHome = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
@@ -283,10 +290,9 @@
  */
 -(void) updateUIWithDownloadedImageKey:(NSString*)key value:(UIImage*)image
 {
-    [self hideActivityIndicator];
     [mDictionary setObject:image forKey:key];
     dispatch_sync(dispatch_get_main_queue(), ^{
-        
+        [self hideActivityIndicator];
         [tableViewHome reloadData];
     });
 }
@@ -300,7 +306,6 @@
  */
 -(void) requestWasSuccessfullWithResponse:(NSArray*) array
 {
-    [self hideActivityIndicator];
     self.mArrayItemList = [[NSMutableArray alloc] initWithArray:array];
     self.mDictionary = [[NSMutableDictionary alloc] init];
     [self performSelectorOnMainThread:@selector(showHomeCustomUI) withObject:nil waitUntilDone:YES];
@@ -314,10 +319,13 @@
  */
 -(void) requestWasFailureWithErrorString:(NSString*) errorString
 {
-    [self hideActivityIndicator];
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:kScreenTitleMain message:kRequestFailureMessage delegate:nil cancelButtonTitle:kAlertCancelButtonText otherButtonTitles:nil];
-    [alert show];
-    [self.navigationController popViewControllerAnimated:YES];
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [self hideActivityIndicator];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:kScreenTitleMain message:kRequestFailureMessage delegate:nil cancelButtonTitle:kAlertCancelButtonText otherButtonTitles:nil];
+        [alert show];
+        [self.navigationController popViewControllerAnimated:YES];
+    });
+    
 }
 
 /**
@@ -329,7 +337,6 @@
  */
 -(void) imageDownloadSuccess:(NSData*)data key:(NSString*)key
 {
-    [self hideActivityIndicator];
     UIImage * image = [[UIImage alloc] initWithData:data];
     [mDictionary setObject:image forKey:key];
     [self updateUIWithDownloadedImageKey:key value:image];
@@ -344,7 +351,6 @@
  */
 -(void) imageDownloadFailure:(NSString*)errorString key:(NSString*)key
 {
-    [self hideActivityIndicator];
     UIImage * image = [UIImage imageNamed:@"Placeholder.png"];
     [mDictionary setObject:image forKey:key];
     [self updateUIWithDownloadedImageKey:key value:image];

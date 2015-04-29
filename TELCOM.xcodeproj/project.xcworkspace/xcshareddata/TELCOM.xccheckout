@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B1B28099-42DE-487C-8B09-D5370DB3693C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TELCOM</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>242A00EB4547E6025C839D072D88C6DFB0470240</key>
+		<string>https://github.com/SivanathanMani/TELCOM.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TELCOM.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>242A00EB4547E6025C839D072D88C6DFB0470240</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/SivanathanMani/TELCOM.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>242A00EB4547E6025C839D072D88C6DFB0470240</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>242A00EB4547E6025C839D072D88C6DFB0470240</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TELCOM</string>
+		</dict>
+	</array>
+</dict>
+</plist>
