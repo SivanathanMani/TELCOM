@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		846A01EB1AEF452300172FA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846A01EA1AEF452300172FA1 /* main.m */; };
+		846A01F41AEF452300172FA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846A01F21AEF452300172FA1 /* Main.storyboard */; };
+		846A01F61AEF452300172FA1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846A01F51AEF452300172FA1 /* Images.xcassets */; };
+		846A01F91AEF452300172FA1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846A01F71AEF452300172FA1 /* LaunchScreen.xib */; };
+		846A02051AEF452300172FA1 /* TELCOMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846A02041AEF452300172FA1 /* TELCOMTests.m */; };
+		846AF7221AEF8CE20041109B /* TELNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AF7211AEF8CE20041109B /* TELNetworkManager.m */; };
+		846AF7241AEF8F640041109B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846AF7231AEF8F640041109B /* SystemConfiguration.framework */; };
+		847693121AEFC8E300313FF0 /* TELHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 847693111AEFC8E300313FF0 /* TELHelper.m */; };
+		847693141AEFCF1100313FF0 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 847693131AEFCF1100313FF0 /* Placeholder.png */; };
+		84BA00221AEF6FED0091C7A0 /* TELHomeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA00141AEF6FED0091C7A0 /* TELHomeDetailViewController.m */; };
+		84BA00231AEF6FED0091C7A0 /* TELHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA00161AEF6FED0091C7A0 /* TELHomeViewController.m */; };
+		84BA00241AEF6FED0091C7A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA00191AEF6FED0091C7A0 /* AppDelegate.m */; };
+		84BA00251AEF6FED0091C7A0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA001B1AEF6FED0091C7A0 /* ViewController.m */; };
+		84BA00261AEF6FED0091C7A0 /* TELHomeListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA00211AEF6FED0091C7A0 /* TELHomeListTableViewCell.m */; };
+		84BA00291AEF72AC0091C7A0 /* TELHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA00281AEF72AC0091C7A0 /* TELHomeManager.m */; };
+		84BA002C1AEF72D20091C7A0 /* TELHomeOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA002B1AEF72D20091C7A0 /* TELHomeOperation.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		846A01FF1AEF452300172FA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 846A01DD1AEF452200172FA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 846A01E41AEF452200172FA1;
+			remoteInfo = TELCOM;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		846A01E51AEF452200172FA1 /* TELCOM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TELCOM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		846A01E91AEF452300172FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846A01EA1AEF452300172FA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		846A01F31AEF452300172FA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		846A01F51AEF452300172FA1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		846A01F81AEF452300172FA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		846A01FE1AEF452300172FA1 /* TELCOMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TELCOMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		846A02031AEF452300172FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846A02041AEF452300172FA1 /* TELCOMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TELCOMTests.m; sourceTree = "<group>"; };
+		846AF7201AEF8CE20041109B /* TELNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TELNetworkManager.h; sourceTree = "<group>"; };
+		846AF7211AEF8CE20041109B /* TELNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TELNetworkManager.m; sourceTree = "<group>"; };
+		846AF7231AEF8F640041109B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		847693101AEFC8E300313FF0 /* TELHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TELHelper.h; sourceTree = "<group>"; };
+		847693111AEFC8E300313FF0 /* TELHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TELHelper.m; sourceTree = "<group>"; };
+		847693131AEFCF1100313FF0 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder.png; path = TELCOM/Images.xcassets/Placeholder.imageset/Placeholder.png; sourceTree = "<group>"; };
+		84BA00111AEF6FED0091C7A0 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		84BA00131AEF6FED0091C7A0 /* TELHomeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TELHomeDetailViewController.h; sourceTree = "<group>"; };
+		84BA00141AEF6FED0091C7A0 /* TELHomeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TELHomeDetailViewController.m; sourceTree = "<group>"; };
+		84BA00151AEF6FED0091C7A0 /* TELHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TELHomeViewController.h; sourceTree = "<group>"; };
+		84BA00161AEF6FED0091C7A0 /* TELHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TELHomeViewController.m; sourceTree = "<group>"; };
+		84BA00181AEF6FED0091C7A0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		84BA00191AEF6FED0091C7A0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		84BA001A1AEF6FED0091C7A0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		84BA001B1AEF6FED0091C7A0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		84BA00201AEF6FED0091C7A0 /* TELHomeListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TELHomeListTableViewCell.h; sourceTree = "<group>"; };
+		84BA00211AEF6FED0091C7A0 /* TELHomeListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TELHomeListTableViewCell.m; sourceTree = "<group>"; };
+		84BA00271AEF72AC0091C7A0 /* TELHomeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TELHomeManager.h; sourceTree = "<group>"; };
+		84BA00281AEF72AC0091C7A0 /* TELHomeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TELHomeManager.m; sourceTree = "<group>"; };
+		84BA002A1AEF72D20091C7A0 /* TELHomeOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TELHomeOperation.h; sourceTree = "<group>"; };
+		84BA002B1AEF72D20091C7A0 /* TELHomeOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TELHomeOperation.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		846A01E21AEF452200172FA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846AF7241AEF8F640041109B /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846A01FB1AEF452300172FA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		846A01DC1AEF452200172FA1 = {
+			isa = PBXGroup;
+			children = (
+				847693131AEFCF1100313FF0 /* Placeholder.png */,
+				846AF7231AEF8F640041109B /* SystemConfiguration.framework */,
+				846A01E61AEF452200172FA1 /* Products */,
+				846A01E71AEF452200172FA1 /* TELCOM */,
+				846A02011AEF452300172FA1 /* TELCOMTests */,
+			);
+			sourceTree = "<group>";
+		};
+		846A01E61AEF452200172FA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				846A01E51AEF452200172FA1 /* TELCOM.app */,
+				846A01FE1AEF452300172FA1 /* TELCOMTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		846A01E71AEF452200172FA1 /* TELCOM */ = {
+			isa = PBXGroup;
+			children = (
+				84BA00101AEF6FED0091C7A0 /* Common */,
+				84BA00121AEF6FED0091C7A0 /* Controller */,
+				84BA00171AEF6FED0091C7A0 /* Main */,
+				84BA001C1AEF6FED0091C7A0 /* Manager */,
+				84BA001D1AEF6FED0091C7A0 /* Model */,
+				84BA001E1AEF6FED0091C7A0 /* Operation */,
+				84BA001F1AEF6FED0091C7A0 /* View */,
+				846A01F21AEF452300172FA1 /* Main.storyboard */,
+				846A01F51AEF452300172FA1 /* Images.xcassets */,
+				846A01F71AEF452300172FA1 /* LaunchScreen.xib */,
+				846A01E81AEF452300172FA1 /* Supporting Files */,
+			);
+			path = TELCOM;
+			sourceTree = "<group>";
+		};
+		846A01E81AEF452300172FA1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				846A01E91AEF452300172FA1 /* Info.plist */,
+				846A01EA1AEF452300172FA1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		846A02011AEF452300172FA1 /* TELCOMTests */ = {
+			isa = PBXGroup;
+			children = (
+				846A02041AEF452300172FA1 /* TELCOMTests.m */,
+				846A02021AEF452300172FA1 /* Supporting Files */,
+			);
+			path = TELCOMTests;
+			sourceTree = "<group>";
+		};
+		846A02021AEF452300172FA1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				846A02031AEF452300172FA1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84BA00101AEF6FED0091C7A0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				84BA00111AEF6FED0091C7A0 /* Constant.h */,
+				847693101AEFC8E300313FF0 /* TELHelper.h */,
+				847693111AEFC8E300313FF0 /* TELHelper.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		84BA00121AEF6FED0091C7A0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84BA00131AEF6FED0091C7A0 /* TELHomeDetailViewController.h */,
+				84BA00141AEF6FED0091C7A0 /* TELHomeDetailViewController.m */,
+				84BA00151AEF6FED0091C7A0 /* TELHomeViewController.h */,
+				84BA00161AEF6FED0091C7A0 /* TELHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84BA00171AEF6FED0091C7A0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				84BA00181AEF6FED0091C7A0 /* AppDelegate.h */,
+				84BA00191AEF6FED0091C7A0 /* AppDelegate.m */,
+				84BA001A1AEF6FED0091C7A0 /* ViewController.h */,
+				84BA001B1AEF6FED0091C7A0 /* ViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		84BA001C1AEF6FED0091C7A0 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				84BA00271AEF72AC0091C7A0 /* TELHomeManager.h */,
+				84BA00281AEF72AC0091C7A0 /* TELHomeManager.m */,
+				846AF7201AEF8CE20041109B /* TELNetworkManager.h */,
+				846AF7211AEF8CE20041109B /* TELNetworkManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		84BA001D1AEF6FED0091C7A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84BA001E1AEF6FED0091C7A0 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				84BA002A1AEF72D20091C7A0 /* TELHomeOperation.h */,
+				84BA002B1AEF72D20091C7A0 /* TELHomeOperation.m */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
+		84BA001F1AEF6FED0091C7A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84BA00201AEF6FED0091C7A0 /* TELHomeListTableViewCell.h */,
+				84BA00211AEF6FED0091C7A0 /* TELHomeListTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		846A01E41AEF452200172FA1 /* TELCOM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 846A02081AEF452300172FA1 /* Build configuration list for PBXNativeTarget "TELCOM" */;
+			buildPhases = (
+				846A01E11AEF452200172FA1 /* Sources */,
+				846A01E21AEF452200172FA1 /* Frameworks */,
+				846A01E31AEF452200172FA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TELCOM;
+			productName = TELCOM;
+			productReference = 846A01E51AEF452200172FA1 /* TELCOM.app */;
+			productType = "com.apple.product-type.application";
+		};
+		846A01FD1AEF452300172FA1 /* TELCOMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 846A020B1AEF452300172FA1 /* Build configuration list for PBXNativeTarget "TELCOMTests" */;
+			buildPhases = (
+				846A01FA1AEF452300172FA1 /* Sources */,
+				846A01FB1AEF452300172FA1 /* Frameworks */,
+				846A01FC1AEF452300172FA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				846A02001AEF452300172FA1 /* PBXTargetDependency */,
+			);
+			name = TELCOMTests;
+			productName = TELCOMTests;
+			productReference = 846A01FE1AEF452300172FA1 /* TELCOMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		846A01DD1AEF452200172FA1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = CTS;
+				TargetAttributes = {
+					846A01E41AEF452200172FA1 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					846A01FD1AEF452300172FA1 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 846A01E41AEF452200172FA1;
+					};
+				};
+			};
+			buildConfigurationList = 846A01E01AEF452200172FA1 /* Build configuration list for PBXProject "TELCOM" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 846A01DC1AEF452200172FA1;
+			productRefGroup = 846A01E61AEF452200172FA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				846A01E41AEF452200172FA1 /* TELCOM */,
+				846A01FD1AEF452300172FA1 /* TELCOMTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		846A01E31AEF452200172FA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847693141AEFCF1100313FF0 /* Placeholder.png in Resources */,
+				846A01F41AEF452300172FA1 /* Main.storyboard in Resources */,
+				846A01F91AEF452300172FA1 /* LaunchScreen.xib in Resources */,
+				846A01F61AEF452300172FA1 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846A01FC1AEF452300172FA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		846A01E11AEF452200172FA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BA00241AEF6FED0091C7A0 /* AppDelegate.m in Sources */,
+				847693121AEFC8E300313FF0 /* TELHelper.m in Sources */,
+				84BA00231AEF6FED0091C7A0 /* TELHomeViewController.m in Sources */,
+				84BA00221AEF6FED0091C7A0 /* TELHomeDetailViewController.m in Sources */,
+				846A01EB1AEF452300172FA1 /* main.m in Sources */,
+				84BA002C1AEF72D20091C7A0 /* TELHomeOperation.m in Sources */,
+				84BA00291AEF72AC0091C7A0 /* TELHomeManager.m in Sources */,
+				846AF7221AEF8CE20041109B /* TELNetworkManager.m in Sources */,
+				84BA00261AEF6FED0091C7A0 /* TELHomeListTableViewCell.m in Sources */,
+				84BA00251AEF6FED0091C7A0 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846A01FA1AEF452300172FA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846A02051AEF452300172FA1 /* TELCOMTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		846A02001AEF452300172FA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 846A01E41AEF452200172FA1 /* TELCOM */;
+			targetProxy = 846A01FF1AEF452300172FA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		846A01F21AEF452300172FA1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				846A01F31AEF452300172FA1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		846A01F71AEF452300172FA1 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				846A01F81AEF452300172FA1 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		846A02061AEF452300172FA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		846A02071AEF452300172FA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		846A02091AEF452300172FA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TELCOM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		846A020A1AEF452300172FA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TELCOM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		846A020C1AEF452300172FA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TELCOMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TELCOM.app/TELCOM";
+			};
+			name = Debug;
+		};
+		846A020D1AEF452300172FA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TELCOMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TELCOM.app/TELCOM";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		846A01E01AEF452200172FA1 /* Build configuration list for PBXProject "TELCOM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846A02061AEF452300172FA1 /* Debug */,
+				846A02071AEF452300172FA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		846A02081AEF452300172FA1 /* Build configuration list for PBXNativeTarget "TELCOM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846A02091AEF452300172FA1 /* Debug */,
+				846A020A1AEF452300172FA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		846A020B1AEF452300172FA1 /* Build configuration list for PBXNativeTarget "TELCOMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846A020C1AEF452300172FA1 /* Debug */,
+				846A020D1AEF452300172FA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 846A01DD1AEF452200172FA1 /* Project object */;
+}
