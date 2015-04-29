@@ -55,6 +55,8 @@
 #define kScreenOrginY           0
 
 #define kDetailTableRowHeight   400
+
+#define kTimeOutSeconds         10
 #pragma String Constants ###########################################
 #define kProficiencyText            @"See My Proficiency"
 #define kScreenTitleMain            @"TELCOM"

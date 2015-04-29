@@ -9,29 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TELCOM/Operation/TELHomeOperation.m"
-            timestampString = "451992252.145767"
+            filePath = "TELCOM/Controller/TELHomeViewController.m"
+            timestampString = "452019577.570286"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "-invokeRequestType:serverURL:params:sender:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TELCOM/Controller/TELHomeDetailViewController.m"
-            timestampString = "451992252.145767"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "-showDetailsCustomUI"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
+            landmarkName = "-downloadImageFromURL:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,29 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TELCOM/Controller/TELHomeViewController.m"
-            timestampString = "452010615.124167"
+            filePath = "TELCOM/Manager/TELHomeManager.m"
+            timestampString = "452019246.778697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "352"
-            endingLineNumber = "352"
-            landmarkName = "-imageDownloadFailure:key:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TELCOM/Controller/TELHomeViewController.m"
-            timestampString = "452010615.124167"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "338"
-            endingLineNumber = "338"
-            landmarkName = "-imageDownloadSuccess:key:"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-sendRequestWithURL:key:delegate:params:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

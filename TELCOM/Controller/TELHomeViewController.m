@@ -22,7 +22,6 @@
 @property (nonatomic, strong) NSMutableArray * mArrayItemList;
 
 //For Lazy Loading
-@property (nonatomic, strong) NSMutableDictionary * mDictionary;
 @property (nonatomic, assign) BOOL isDragging;
 @property (nonatomic, assign) BOOL isDecliring;
 @end
@@ -30,7 +29,6 @@
 @implementation TELHomeViewController
 @synthesize tableViewHome;
 @synthesize mArrayItemList;
-@synthesize mDictionary;
 @synthesize isDecliring;
 @synthesize isDragging;
 
@@ -102,18 +100,19 @@
     //For dynamic height
     //CGSize size = [self descriptionHeight:cell.labelDesc];
     //NSLog(@"Cell Height %f", size.height);
-    
+
     //For Lazy Loading...
-    cell.iconView.image=[UIImage imageNamed:@"Placeholder.png"];
+    cell.iconView.image = [UIImage imageNamed:@"Placeholder.png"];
     NSString * keyString = [TELHelper checkValidImageURL:[TELHelper checkValidString:[[mArrayItemList objectAtIndex:indexPath.row] valueForKey:kResponseIconKey]] index:indexPath.row];
-    
-    if ([mDictionary valueForKey:keyString])
+
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:keyString])
     {
-        cell.iconView.image = [mDictionary valueForKey:keyString];
+        NSData * data = [[NSUserDefaults standardUserDefaults] valueForKey:keyString];
+        cell.iconView.image = [UIImage imageWithData:data];
     }
     else
     {
-        if (!isDragging && !isDecliring)
+        if (!isDragging && !isDecliring && ([[NSUserDefaults standardUserDefaults] valueForKey:keyString] == nil))
         {
             [self downloadImageFromURL:keyString];
         }
@@ -248,7 +247,8 @@
     TELHomeDetailViewController * homeDetailViewController = [[TELHomeDetailViewController alloc] init];
     homeDetailViewController.stringTitle = [TELHelper checkValidString:[[mArrayItemList objectAtIndex:indexPath.row] objectForKey:kResponseTitleKey]];
     homeDetailViewController.stringDesc = [TELHelper checkValidString:[[mArrayItemList objectAtIndex:indexPath.row] objectForKey:kResponseDescKey]];
-    homeDetailViewController.image = [mDictionary valueForKey:[TELHelper checkValidString:[[mArrayItemList objectAtIndex:indexPath.row] objectForKey:kResponseIconKey]]];
+    NSData * data = [[NSUserDefaults standardUserDefaults] valueForKey:[TELHelper checkValidString:[[mArrayItemList objectAtIndex:indexPath.row] objectForKey:kResponseIconKey]]];
+    homeDetailViewController.image = [UIImage imageWithData:data];
     [self.navigationController pushViewController:homeDetailViewController animated:YES];
 }
 
@@ -275,11 +275,15 @@
  */
 -(void) downloadImageFromURL:(NSString *)urlString
 {
-    [self showActivityIndicator:@"Downloading..."];
-    
     if([urlString hasPrefix:@"https://"] || [urlString hasPrefix:@"http://"])
     {
+        [self showActivityIndicator:@"Downloading..."];
         [[TELHomeManager sharedManager] sendRequestWithURL:urlString key:urlString delegate:self params:nil];
+    }
+    else
+    {
+        UIImage * image = [UIImage imageNamed:@"Failed.png"];
+        [self updateUIWithDownloadedImageKey:urlString value:image];
     }
 }
 
@@ -290,11 +294,13 @@
  */
 -(void) updateUIWithDownloadedImageKey:(NSString*)key value:(UIImage*)image
 {
-    [mDictionary setObject:image forKey:key];
-    dispatch_sync(dispatch_get_main_queue(), ^{
+    NSData * data = UIImagePNGRepresentation(image);
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:key];
+    dispatch_async(dispatch_get_main_queue(), ^{
         [self hideActivityIndicator];
         [tableViewHome reloadData];
     });
+    
 }
 
 #pragma TELHomeViewDelegate methods--------------------------------------------------------
@@ -307,7 +313,6 @@
 -(void) requestWasSuccessfullWithResponse:(NSArray*) array
 {
     self.mArrayItemList = [[NSMutableArray alloc] initWithArray:array];
-    self.mDictionary = [[NSMutableDictionary alloc] init];
     [self performSelectorOnMainThread:@selector(showHomeCustomUI) withObject:nil waitUntilDone:YES];
 }
 
@@ -338,7 +343,6 @@
 -(void) imageDownloadSuccess:(NSData*)data key:(NSString*)key
 {
     UIImage * image = [[UIImage alloc] initWithData:data];
-    [mDictionary setObject:image forKey:key];
     [self updateUIWithDownloadedImageKey:key value:image];
 }
 
@@ -351,8 +355,7 @@
  */
 -(void) imageDownloadFailure:(NSString*)errorString key:(NSString*)key
 {
-    UIImage * image = [UIImage imageNamed:@"Placeholder.png"];
-    [mDictionary setObject:image forKey:key];
+    UIImage * image = [UIImage imageNamed:@"Failed.png"];
     [self updateUIWithDownloadedImageKey:key value:image];
 }
 

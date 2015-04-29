@@ -11,6 +11,9 @@
 #import "TELHomeManager.h"
 
 @interface TELHomeOperation ()
+{
+    NSTimer * timer;
+}
 @property (nonatomic, strong) NSMutableData * receivedData;
 @property (nonatomic, strong) id manager;
 @end
@@ -109,10 +112,11 @@
 -(void) invokeRequestToDownloadImageFromURL:(NSString*)url sender:(id)sender
 {
     self.manager = sender;
+        
     NSURLRequest *request = [[NSURLRequest alloc]
                              initWithURL: [NSURL URLWithString:url]
                              cachePolicy: NSURLRequestReloadRevalidatingCacheData
-                             timeoutInterval: 30
+                             timeoutInterval:kTimeOutSeconds
                              ];
     NSOperationQueue * queue = [[NSOperationQueue alloc]init];
     [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse * response, NSData * data, NSError * error)
