@@ -12,6 +12,7 @@
 #import "Constant.h"
 #import "TELHomeManager.h"
 #import "TELHelper.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface TELHomeViewController ()
 {
@@ -38,17 +39,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = kScreenTitleHome;
     self.view.autoresizesSubviews = YES;
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.view.backgroundColor = [UIColor whiteColor];
     isTableLoaded = NO;
     
-#if 0
-    UIBarButtonItem * clearBarButton = [[UIBarButtonItem alloc] initWithTitle:kClearCacheText style:UIBarButtonItemStylePlain target:self action:@selector(clearCacheButtonAction:)];
-    self.navigationItem.rightBarButtonItem = clearBarButton;
-    [self.navigationItem.rightBarButtonItem setEnabled:NO];
-#endif
     [self fetchAndReloadData];
     
 }
@@ -85,19 +80,16 @@
 {
     //For dynamic height
     CGSize size = [self descriptionHeight:[TELHelper checkValidString:[[mArrayItemList objectAtIndex:indexPath.row] objectForKey:kResponseDescKey]]];
-    
     float fHeight = size.height;
-    if(fHeight > 25)
+    
+    if(fHeight > kTableViewRowMin)
     {
-        fHeight = size.height + 45;
-        NSLog(@"Max");
+        fHeight = size.height + kTableViewRowSpace;
     }
     else
     {
         fHeight = kTableViewRowHeight;
-        NSLog(@"LOW");
     }
-    NSLog(@"Cell Height %f", size.height);
     return fHeight;
 }
 
@@ -108,8 +100,14 @@
     if(cell == nil)
     {
         cell = [[TELHomeListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        tableViewHome.separatorColor = [UIColor blackColor];
+        tableViewHome.separatorColor = [UIColor clearColor];
     }
+    
+//    CAGradientLayer *grad = [CAGradientLayer layer];
+//    grad.frame = cell.bounds;
+//    grad.colors = [NSArray arrayWithObjects:(id)[[UIColor whiteColor] CGColor], (id)[[UIColor lightGrayColor] CGColor], nil];
+//    [cell setBackgroundView:[[UIView alloc] init]];
+//    [cell.backgroundView.layer insertSublayer:grad atIndex:0];
     
     cell.labelTitle.text = [TELHelper checkValidString:[[mArrayItemList objectAtIndex:indexPath.row] objectForKey:kResponseTitleKey]];
     UIFont * boldFont = [UIFont boldSystemFontOfSize:17.0f];
@@ -142,7 +140,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-#if 0
+#if DETAIL_SCREEN_ENABLED
     [self showHomeDetailsViewWithSelectedIndexPath:indexPath];
 #endif
     
@@ -190,6 +188,7 @@
             }
         }
     }
+    [tableViewHome reloadData];
 }
 
 /**
@@ -229,7 +228,12 @@
     isTableLoaded = YES;
     if([mArrayItemList count] != 0)
     {
-        [self.navigationItem.rightBarButtonItem setEnabled:YES];
+        
+#if CLEAR_CACHE_ENABLED
+        UIBarButtonItem * clearBarButton = [[UIBarButtonItem alloc] initWithTitle:kClearCacheText style:UIBarButtonItemStylePlain target:self action:@selector(clearCacheButtonAction:)];
+        self.navigationItem.rightBarButtonItem = clearBarButton;
+#endif
+        
         if(tableViewHome != nil)
         {
             [tableViewHome removeFromSuperview];
@@ -419,6 +423,7 @@
     {
         tableViewHome.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
     }
+    [tableViewHome reloadData];
 }
 
 @end

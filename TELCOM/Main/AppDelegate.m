@@ -8,18 +8,39 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "Constant.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) UINavigationController * navController;
+@property (nonatomic, strong) ViewController * viewController;
 @end
 
 @implementation AppDelegate
+@synthesize window;
 @synthesize navController;
+@synthesize viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.navController = [[UINavigationController alloc] initWithRootViewController:self.window.rootViewController];
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    self.window = [[UIWindow alloc] initWithFrame:screenRect];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.autoresizesSubviews = YES;
+    self.window.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    window.rootViewController.view.autoresizesSubviews = YES;
+    window.rootViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    self.viewController = [[ViewController alloc] init];
+    viewController.view.autoresizesSubviews = YES;
+    viewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    self.navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    navController.view.autoresizesSubviews = YES;
+    navController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.window.rootViewController = self.navController;
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

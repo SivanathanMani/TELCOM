@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		846A01EB1AEF452300172FA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846A01EA1AEF452300172FA1 /* main.m */; };
-		846A01F41AEF452300172FA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846A01F21AEF452300172FA1 /* Main.storyboard */; };
 		846A01F61AEF452300172FA1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846A01F51AEF452300172FA1 /* Images.xcassets */; };
-		846A01F91AEF452300172FA1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846A01F71AEF452300172FA1 /* LaunchScreen.xib */; };
 		846A02051AEF452300172FA1 /* TELCOMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846A02041AEF452300172FA1 /* TELCOMTests.m */; };
 		846AF7221AEF8CE20041109B /* TELNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AF7211AEF8CE20041109B /* TELNetworkManager.m */; };
 		846AF7241AEF8F640041109B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846AF7231AEF8F640041109B /* SystemConfiguration.framework */; };
@@ -24,6 +22,7 @@
 		84BA00291AEF72AC0091C7A0 /* TELHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA00281AEF72AC0091C7A0 /* TELHomeManager.m */; };
 		84BA002C1AEF72D20091C7A0 /* TELHomeOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA002B1AEF72D20091C7A0 /* TELHomeOperation.m */; };
 		84C55B921AF11D25003425AD /* Failed.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C55B911AF11D25003425AD /* Failed.png */; };
+		84C6D9821AF22101007697DE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6D9811AF22101007697DE /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +39,7 @@
 		846A01E51AEF452200172FA1 /* TELCOM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TELCOM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846A01E91AEF452300172FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846A01EA1AEF452300172FA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		846A01F31AEF452300172FA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		846A01F51AEF452300172FA1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		846A01F81AEF452300172FA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		846A01FE1AEF452300172FA1 /* TELCOMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TELCOMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		846A02031AEF452300172FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846A02041AEF452300172FA1 /* TELCOMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TELCOMTests.m; sourceTree = "<group>"; };
@@ -68,6 +65,7 @@
 		84BA002A1AEF72D20091C7A0 /* TELHomeOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TELHomeOperation.h; sourceTree = "<group>"; };
 		84BA002B1AEF72D20091C7A0 /* TELHomeOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TELHomeOperation.m; sourceTree = "<group>"; };
 		84C55B911AF11D25003425AD /* Failed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Failed.png; path = TELCOM/Images.xcassets/Failed.imageset/Failed.png; sourceTree = "<group>"; };
+		84C6D9811AF22101007697DE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C6D9821AF22101007697DE /* QuartzCore.framework in Frameworks */,
 				846AF7241AEF8F640041109B /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +91,7 @@
 		846A01DC1AEF452200172FA1 = {
 			isa = PBXGroup;
 			children = (
+				84C6D9811AF22101007697DE /* QuartzCore.framework */,
 				84C55B911AF11D25003425AD /* Failed.png */,
 				847693131AEFCF1100313FF0 /* Placeholder.png */,
 				846AF7231AEF8F640041109B /* SystemConfiguration.framework */,
@@ -120,9 +120,7 @@
 				84BA001D1AEF6FED0091C7A0 /* Model */,
 				84BA001E1AEF6FED0091C7A0 /* Operation */,
 				84BA001F1AEF6FED0091C7A0 /* View */,
-				846A01F21AEF452300172FA1 /* Main.storyboard */,
 				846A01F51AEF452300172FA1 /* Images.xcassets */,
-				846A01F71AEF452300172FA1 /* LaunchScreen.xib */,
 				846A01E81AEF452300172FA1 /* Supporting Files */,
 			);
 			path = TELCOM;
@@ -304,8 +302,6 @@
 			files = (
 				84C55B921AF11D25003425AD /* Failed.png in Resources */,
 				847693141AEFCF1100313FF0 /* Placeholder.png in Resources */,
-				846A01F41AEF452300172FA1 /* Main.storyboard in Resources */,
-				846A01F91AEF452300172FA1 /* LaunchScreen.xib in Resources */,
 				846A01F61AEF452300172FA1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,25 +350,6 @@
 			targetProxy = 846A01FF1AEF452300172FA1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		846A01F21AEF452300172FA1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				846A01F31AEF452300172FA1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		846A01F71AEF452300172FA1 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				846A01F81AEF452300172FA1 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		846A02061AEF452300172FA1 /* Debug */ = {

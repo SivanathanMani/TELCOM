@@ -12,6 +12,20 @@
 #pragma URL Constants ###########################################
 #define kTELServiceURLForContent   @"https://dl.dropboxusercontent.com/u/746330/facts.json"
 
+#pragma Application Feature Constants ###########################################
+/**
+ To clear the cache image data which are alreay stored and call the service to get all the images again.
+ */
+#define CLEAR_CACHE_ENABLED     1
+
+/**
+ To display the spalsh screen
+ Note: Splash screen manualy we created and this is not default one.
+ */
+#define SPLASH_SCREEN_ENABLED   1
+
+#define DETAIL_SCREEN_ENABLED   1
+
 #pragma Number Constants ###########################################
 #define kHomeButtonSizeWidth    200
 #define kHomeButtonSizeHeight   50
@@ -30,6 +44,8 @@
 #define kCellTopSpaceForIcon    50
 
 #define kTableViewRowHeight     100
+#define kTableViewRowMin         25
+#define kTableViewRowSpace       45
 
 #define kRefreshViewOrginX      0
 #define kRefreshViewOrginY      55
@@ -57,9 +73,17 @@
 #define kDetailTableRowHeight   400
 
 #define kTimeOutSeconds         10
+
+#define kSplashTitleWidth       300
+#define kSplashTitleHeight      50
+
+#define kSplashDescWidth       300
+#define kSplashDescHeight      50
+
 #pragma String Constants ###########################################
 #define kProficiencyText            @"See My Proficiency"
 #define kScreenTitleMain            @"TELCOM"
+#define kCopyRightsText             @"Copyright (c) 2015 CTS. All rights reserved."
 #define kScreenTitleHome            @"Home"
 #define kScreenTitleDetails         @"Details"
 #define kNetworkConnectionLostMsg   @"Network Connection Lost and Please Try Later!"

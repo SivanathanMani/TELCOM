@@ -60,9 +60,12 @@
     tableViewDetail.dataSource = self;
     tableViewDetail.delegate = self;
     tableViewDetail.autoresizesSubviews = YES;
+    tableViewDetail.backgroundView = nil;
+    tableViewDetail.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
     tableViewDetail.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
     
     UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(kHeaderViewOrginX, kHeaderViewOrginY, kHeaderViewWidth, kHeaderViewHeight)];
+    headerView.backgroundColor = [UIColor clearColor];
     imageView = [[UIImageView alloc] initWithFrame:CGRectMake((headerView.frame.size.width - kDetailImageWidth)/2, kDetailImageOrginY, kDetailImageWidth, kDetailImageHeight)];
     imageView.autoresizesSubviews = YES;
     imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
@@ -100,13 +103,18 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.backgroundColor = [UIColor clearColor];
     }
     
     textViewDesc = [[UITextView alloc] initWithFrame:CGRectMake(kDetailTextViewOrginX, kDetailDescOrginY, cell.contentView.frame.size.width , kDetailTableRowHeight)];
     textViewDesc.font = [UIFont systemFontOfSize:20.0f];
     textViewDesc.autoresizesSubviews = YES;
-    textViewDesc.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    textViewDesc.backgroundColor = [UIColor clearColor];
+    textViewDesc.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    textViewDesc.textColor = [UIColor blackColor];
     [textViewDesc setScrollEnabled:NO];
+    textViewDesc.editable = NO;
     [cell.contentView addSubview:textViewDesc];
     
     if([TELHelper checkValidString:stringDesc])

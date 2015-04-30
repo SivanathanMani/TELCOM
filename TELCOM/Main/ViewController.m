@@ -21,12 +21,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.title = kScreenTitleMain;
+    self.title = @"";
     self.view.autoresizesSubviews = YES;
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    
-    //[self showProficiencyButton];
-    
+#if SPLASH_SCREEN_ENABLED
+    [self showLoadingScreen];
+#endif
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,17 +40,30 @@
 /**
  To display the button to push the Home screen
  */
--(void) showProficiencyButton
+-(void) showLoadingScreen
 {
-    UIButton * buttonExcercise = [UIButton buttonWithType:UIButtonTypeCustom];
-    [buttonExcercise setFrame:CGRectMake((self.view.frame.size.width - kHomeButtonSizeWidth)/2, (self.view.frame.size.height - kHomeButtonSizeHeight)/2, kHomeButtonSizeWidth, kHomeButtonSizeHeight)];
-    buttonExcercise.autoresizesSubviews = YES;
-    buttonExcercise.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-    buttonExcercise.layer.cornerRadius = 5.0f;
-    [buttonExcercise setBackgroundColor:[UIColor brownColor]];
-    [buttonExcercise setTitle:kProficiencyText forState:UIControlStateNormal];
-    [buttonExcercise addTarget:self action:@selector(showHomeTableView:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:buttonExcercise];
+    
+    UILabel * labelTitle = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width - kSplashTitleWidth)/2, (self.view.frame.size.height - kSplashTitleHeight)/2, kSplashTitleWidth, kSplashTitleHeight)];
+    labelTitle.text = kScreenTitleMain;
+    labelTitle.autoresizesSubviews = YES;
+    labelTitle.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+    labelTitle.textAlignment = NSTextAlignmentCenter;
+    labelTitle.numberOfLines = 1;
+    labelTitle.lineBreakMode = NSLineBreakByWordWrapping;
+    labelTitle.textColor = [UIColor blueColor];
+    [labelTitle setFont:[UIFont boldSystemFontOfSize:22.0f]];
+    [self.view addSubview:labelTitle];
+    
+    UILabel * labelDesc = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width - kSplashDescWidth)/2, self.view.frame.size.height - kSplashDescHeight, kSplashDescWidth, kSplashDescHeight)];
+    labelDesc.text = kCopyRightsText;
+    labelDesc.autoresizesSubviews = YES;
+    labelDesc.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
+    labelDesc.textAlignment = NSTextAlignmentCenter;
+    labelDesc.numberOfLines = 1;
+    labelDesc.font = [UIFont systemFontOfSize:15.0f];
+    labelDesc.lineBreakMode = NSLineBreakByWordWrapping;
+    labelDesc.textColor = [UIColor blueColor];
+    [self.view addSubview:labelDesc];
 }
 
 /**
