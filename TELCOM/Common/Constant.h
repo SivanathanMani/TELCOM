@@ -16,7 +16,7 @@
 /**
  To clear the cache image data which are alreay stored and call the service to get all the images again.
  */
-#define CLEAR_CACHE_ENABLED     1
+#define CLEAR_CACHE_ENABLED     0
 
 /**
  To display the spalsh screen
@@ -24,7 +24,10 @@
  */
 #define SPLASH_SCREEN_ENABLED   1
 
-#define DETAIL_SCREEN_ENABLED   1
+/**
+ To diaplay the details screen
+ */
+#define DETAIL_SCREEN_ENABLED   0
 
 #pragma Number Constants ###########################################
 #define kHomeButtonSizeWidth    200
