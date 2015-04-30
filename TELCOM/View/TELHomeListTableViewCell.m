@@ -21,6 +21,7 @@
     {
         self.autoresizesSubviews = YES;
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        self.contentView.backgroundColor = [UIColor lightGrayColor];
         self.labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(kCellTitleOrginX, kCellTitleOrginX, kCellTitleSizeWidth, kCellTitleSizeHeight)];
         labelTitle.autoresizesSubviews = YES;
         labelTitle.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
@@ -34,9 +35,9 @@
         labelDesc.autoresizesSubviews = YES;
         labelDesc.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         labelDesc.textAlignment = NSTextAlignmentLeft;
-        labelDesc.numberOfLines = 4;
+        labelDesc.numberOfLines = 0;
         labelDesc.font = [UIFont systemFontOfSize:17.0f];
-        labelDesc.lineBreakMode = NSLineBreakByTruncatingTail;
+        labelDesc.lineBreakMode = NSLineBreakByWordWrapping;
         labelDesc.textColor = [UIColor blackColor];
         [self.contentView addSubview:labelDesc];
         

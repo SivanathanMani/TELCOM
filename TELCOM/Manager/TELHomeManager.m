@@ -67,12 +67,12 @@
  @param array
  @return
  */
--(void) requestWasSuccessWithResponse:(NSArray*) array
+-(void) requestWasSuccessWithResponse:(NSDictionary*) dictItems
 {
     id <TELHomeViewDelegate> delegate = self.controller;
     if([delegate respondsToSelector:@selector(requestWasSuccessfullWithResponse:)])
     {
-        [delegate requestWasSuccessfullWithResponse:array];
+        [delegate requestWasSuccessfullWithResponse:dictItems];
     }
 }
 

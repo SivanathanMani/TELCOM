@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TELHomeViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : TELHomeViewController
 
 
 @end

@@ -25,7 +25,7 @@
     self.view.autoresizesSubviews = YES;
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
-    [self showProficiencyButton];
+    //[self showProficiencyButton];
     
 }
 

@@ -43,6 +43,12 @@
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.view.backgroundColor = [UIColor whiteColor];
     isTableLoaded = NO;
+    
+#if 0
+    UIBarButtonItem * clearBarButton = [[UIBarButtonItem alloc] initWithTitle:kClearCacheText style:UIBarButtonItemStylePlain target:self action:@selector(clearCacheButtonAction:)];
+    self.navigationItem.rightBarButtonItem = clearBarButton;
+    [self.navigationItem.rightBarButtonItem setEnabled:NO];
+#endif
     [self fetchAndReloadData];
     
 }
@@ -77,7 +83,22 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return kTableViewRowHeight;
+    //For dynamic height
+    CGSize size = [self descriptionHeight:[TELHelper checkValidString:[[mArrayItemList objectAtIndex:indexPath.row] objectForKey:kResponseDescKey]]];
+    
+    float fHeight = size.height;
+    if(fHeight > 25)
+    {
+        fHeight = size.height + 45;
+        NSLog(@"Max");
+    }
+    else
+    {
+        fHeight = kTableViewRowHeight;
+        NSLog(@"LOW");
+    }
+    NSLog(@"Cell Height %f", size.height);
+    return fHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -87,19 +108,16 @@
     if(cell == nil)
     {
         cell = [[TELHomeListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        tableViewHome.separatorColor = [UIColor blackColor];
     }
     
     cell.labelTitle.text = [TELHelper checkValidString:[[mArrayItemList objectAtIndex:indexPath.row] objectForKey:kResponseTitleKey]];
     UIFont * boldFont = [UIFont boldSystemFontOfSize:17.0f];
-    UIColor * foregroundColor = [UIColor blackColor];
+    UIColor * foregroundColor = [UIColor blueColor];
     NSDictionary * attrs = [NSDictionary dictionaryWithObjectsAndKeys:boldFont, NSFontAttributeName, foregroundColor, NSForegroundColorAttributeName, nil];
     NSMutableAttributedString * attributedText = [[NSMutableAttributedString alloc] initWithString:cell.labelTitle.text attributes:attrs];
     [cell.labelTitle setAttributedText:attributedText];
     cell.labelDesc.text = [TELHelper checkValidString:[[mArrayItemList objectAtIndex:indexPath.row] objectForKey:kResponseDescKey]];
-    
-    //For dynamic height
-    //CGSize size = [self descriptionHeight:cell.labelDesc];
-    //NSLog(@"Cell Height %f", size.height);
 
     //For Lazy Loading...
     cell.iconView.image = [UIImage imageNamed:@"Placeholder.png"];
@@ -124,7 +142,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+#if 0
     [self showHomeDetailsViewWithSelectedIndexPath:indexPath];
+#endif
+    
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
@@ -150,33 +171,53 @@
 }
 
 #pragma Custom method implementation
+/**
+ To clear the cache data
+ */
+-(void) clearCacheButtonAction:(id)sender
+{
+    if(mArrayItemList != nil)
+    {
+        for(NSDictionary * item in mArrayItemList)
+        {
+            if(item != nil)
+            {
+                NSString * keyString = [item valueForKey:kResponseIconKey];
+                if([[NSUserDefaults standardUserDefaults] objectForKey:keyString])
+                {
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:keyString];
+                }
+            }
+        }
+    }
+}
 
 /**
  To calculate the length of the given label text
  It will be used to calculate the height of the tableview cell.
  @param sender
  */
--(CGSize) descriptionHeight:(id)sender
+-(CGSize) descriptionHeight:(NSString*)text
 {
-    UILabel * label = (UILabel*)sender;
-    
-    NSAttributedString *attributedText =
-    [[NSAttributedString alloc] initWithString:label.text
+    text =  [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    text =  [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+
+    CGSize size = CGSizeMake(150, 1000);
+    NSAttributedString * attributedText =
+    [[NSAttributedString alloc] initWithString:text
      attributes:@
      {
-     NSFontAttributeName:label.font
+     NSFontAttributeName:[UIFont systemFontOfSize:[UIFont systemFontSize]]
      }];
-    CGRect rect = [attributedText boundingRectWithSize:(CGSize)
-    {
-        label.frame.size.width, CGFLOAT_MAX
-    }
+    CGRect rect = [attributedText boundingRectWithSize:size
                                                options:NSStringDrawingUsesLineFragmentOrigin
                                                context:nil];
-    rect.size.height = rect.size.height / 20;
-    CGSize size = rect.size;
+    rect.size.height = rect.size.height;
+    CGSize size1 = rect.size;
     
-    return size;
+    return size1;
 }
+
 
 /**
  To display the ui components if we get item(s) successfully.
@@ -188,6 +229,7 @@
     isTableLoaded = YES;
     if([mArrayItemList count] != 0)
     {
+        [self.navigationItem.rightBarButtonItem setEnabled:YES];
         if(tableViewHome != nil)
         {
             [tableViewHome removeFromSuperview];
@@ -310,10 +352,14 @@
  @param array
  @return
  */
--(void) requestWasSuccessfullWithResponse:(NSArray*) array
+-(void) requestWasSuccessfullWithResponse:(NSDictionary*) dictItems
 {
-    self.mArrayItemList = [[NSMutableArray alloc] initWithArray:array];
-    [self performSelectorOnMainThread:@selector(showHomeCustomUI) withObject:nil waitUntilDone:YES];
+    NSArray * arrayItems = [dictItems objectForKey:kResponseKey];
+    self.mArrayItemList = [[NSMutableArray alloc] initWithArray:arrayItems];
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        self.navigationItem.title = [dictItems objectForKey:kPageTitleKey];
+        [self showHomeCustomUI];
+    });
 }
 
 /**
@@ -328,7 +374,6 @@
         [self hideActivityIndicator];
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:kScreenTitleMain message:kRequestFailureMessage delegate:nil cancelButtonTitle:kAlertCancelButtonText otherButtonTitles:nil];
         [alert show];
-        [self.navigationController popViewControllerAnimated:YES];
     });
     
 }

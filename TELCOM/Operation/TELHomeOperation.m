@@ -64,8 +64,7 @@
              NSString * jsonString = [[NSString alloc] initWithData:self.receivedData encoding:NSASCIIStringEncoding];
              NSData * data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
              NSDictionary * dictItems = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-             NSArray * arrayItems = [dictItems objectForKey:kResponseKey];
-             [self requestWasSuccessfulWithResponse:arrayItems];
+             [self requestWasSuccessfulWithResponse:dictItems];
          }
          else
          {
@@ -79,12 +78,12 @@
  To handle success part of respone
  @param arrayResponse
  */
--(void) requestWasSuccessfulWithResponse:(NSArray *)arrayResponse
+-(void) requestWasSuccessfulWithResponse:(NSDictionary *)dictItems
 {
     id <HomeManagerDelegate> delegate = self.manager;
     if([delegate respondsToSelector:@selector(requestWasSuccessWithResponse:)])
     {
-        [delegate requestWasSuccessWithResponse:arrayResponse];
+        [delegate requestWasSuccessWithResponse:dictItems];
     }
 }
 

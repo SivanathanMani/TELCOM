@@ -14,10 +14,10 @@
 /**
  To handle success response which is having multiple list of items
  This method will be invoked by Manager
- @param array
+ @param dictionary
  @return
  */
--(void) requestWasSuccessfullWithResponse:(NSArray*) array;
+-(void) requestWasSuccessfullWithResponse:(NSDictionary*) dictItems;
 
 /**
  To handle failure response which is having error information

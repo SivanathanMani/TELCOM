@@ -64,6 +64,7 @@
 #define kScreenTitleDetails         @"Details"
 #define kNetworkConnectionLostMsg   @"Network Connection Lost and Please Try Later!"
 
+#define kPageTitleKey               @"title"
 #define kResponseKey                @"rows"
 #define kResponseTitleKey           @"title"
 #define kResponseDescKey            @"description"
@@ -75,4 +76,7 @@
 #define kDataNotAvailableMessage    @"Data is not available and Try again later."
 #define kPullTorefreshText          @"Pull To Refresh"
 #define kDescriptionNotAvailableText @"Description is not available."
+
+#define kClearCacheText             @"Clear Cache"
+
 #endif
