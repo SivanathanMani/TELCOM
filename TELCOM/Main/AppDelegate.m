@@ -10,7 +10,7 @@
 #import "ViewController.h"
 #import "Constant.h"
 
-//Test check in
+//Removed comments
 @interface AppDelegate ()
 @property (nonatomic, strong) UINavigationController * navController;
 @property (nonatomic, strong) ViewController * viewController;
